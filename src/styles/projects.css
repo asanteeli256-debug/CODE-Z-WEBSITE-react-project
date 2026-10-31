@@ -1,0 +1,135 @@
+/* =========================================================
+   Projects page (uses the same hero, curve, fonts and
+   dark-red accent as the Services page)
+   ========================================================= */
+
+/* The white section sits UNDER the hero */
+.proj-list {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  padding: 210px 6vw 140px;
+}
+.proj-list-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  will-change: transform;      /* moved by useCurves.js */
+}
+
+.proj-hero-btn { margin-top: 0; }
+
+/* ---- the grid of boxes ---- */
+.proj-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 36px 28px;
+}
+
+.proj {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+.proj:focus-visible { outline: 2px solid #000; outline-offset: 8px; border-radius: 22px; }
+.proj.is-static { cursor: default; }
+
+/* the box with the picture or logo */
+.proj-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 22px;
+  background: var(--tone, #d9d9d9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.4s ease;
+}
+.proj:hover .proj-media { box-shadow: 0 28px 70px -24px rgba(138, 0, 0, 0.7); }
+.proj:hover .proj-media img { transform: scale(1.06); }
+
+/* logos are shown whole, with space around them */
+.proj-media.is-logo img {
+  object-fit: contain;
+  padding: 12%;
+}
+
+/* shown when there is no picture yet */
+.proj-glyph {
+  font-family: 'Audiowide', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.28);
+}
+.proj-media[style*="#5b3ef0"] .proj-glyph { color: rgba(255, 255, 255, 0.55); }
+
+/* round arrow that appears on hover */
+.proj-go {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.proj-go svg { width: 18px; height: 18px; }
+.proj:hover .proj-go,
+.proj:focus-visible .proj-go { opacity: 1; transform: scale(1); }
+
+/* text under the box */
+.proj-info { padding: 18px 4px 0; }
+.proj-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Audiowide', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #8a0000;
+}
+.proj-num::after { content: ''; width: 28px; height: 1px; background: #8a0000; }
+.proj-name {
+  margin: 10px 0 6px;
+  font-family: 'Audiowide', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+}
+.proj-type { font-size: 14px; color: #555; }
+
+/* the "Your project" invitation box */
+.proj-media-next {
+  background: transparent;
+  border: 2px dashed #bdbdbd;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.proj-next:hover .proj-media-next { border-color: #8a0000; background: #faf4f4; box-shadow: none; }
+.proj-plus {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 3.4rem;
+  line-height: 1;
+  color: #8a0000;
+  transition: transform 0.3s ease;
+}
+.proj-next:hover .proj-plus { transform: rotate(90deg); }
+
+@media (max-width: 600px) {
+  .proj-list { padding: 140px 6vw 100px; }
+  .proj-grid { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+  .proj-info { padding-top: 12px; }
+  .proj-name { font-size: 0.85rem; }
+  .proj-type { font-size: 12.5px; }
+}
+@media (max-width: 380px) {
+  .proj-grid { grid-template-columns: 1fr; }
+}

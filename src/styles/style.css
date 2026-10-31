@@ -123,6 +123,8 @@ body.is-loading {
   filter: blur(8px);
   z-index: 0;
   transition: transform 2.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  backface-visibility: hidden;
 }
 
 .hero-overlay {
@@ -240,6 +242,73 @@ body.nav-lock { overflow: hidden; }
   .nav-open .nav-links { opacity: 1; visibility: visible; }
   .nav-links a { font-size: 22px; }
 }
+
+
+/* Desktop: once the visitor is past the hero, the bar steps aside and a
+   hamburger takes over, opening the same full-screen menu as on phones */
+@media (min-width: 801px) {
+  .nav-toggle {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.8);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+  }
+  .nav-logo {
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+  }
+
+  .navbar.is-past {
+    background: transparent;
+    box-shadow: none;
+    pointer-events: none;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .navbar.is-past .nav-toggle {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(5, 5, 5, 0.94);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+  .navbar.is-past:not(.nav-open) .nav-logo {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+  }
+
+  /* the same full-screen menu as the phone version */
+  .navbar.is-past .nav-links {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    background: #050505;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .navbar.is-past.nav-fade .nav-links { transition: opacity 0.3s ease, visibility 0.3s ease; }
+  .navbar.is-past.nav-open { pointer-events: auto; }
+  .navbar.is-past.nav-open .nav-links { opacity: 1; visibility: visible; }
+  .navbar.is-past .nav-links a { font-size: 22px; }
+
+  /* no sideways jump when the page scrollbar disappears */
+  body.nav-lock .navbar { padding-right: calc(4vw + var(--sbw, 0px)); }
+}
+
+
+
 
 /* Screen-reader only text */
 .sr-only {
@@ -364,7 +433,7 @@ body.loaded .scroll-indicator { opacity: 1; }
 .about-text {
   max-width: 280px;
   margin-top: 6px;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.45;
   color: #111;
 }
