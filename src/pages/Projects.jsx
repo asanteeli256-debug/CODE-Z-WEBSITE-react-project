@@ -24,24 +24,26 @@ const CURVES = [['#proj-list', '.page-hero .curve', '.proj-list-inner']];
           false = the image is a photo (fills the box)
    tone : background colour of the box
    ========================================================= */
+
 const PROJECTS = [
   {
     name: 'Sandstone School of Languages',
     type: 'School website',
-    url: 'https://sandstone-website.asanteeli256.workers.dev/', // TODO: paste the link to the Sandstone School of Languages website
-    img: '/projects/ChatGPT Image Sep 9, 2026, 10_27_58 PM.png', // TODO: e.g. '/projects/sandstone.jpg'
+    url: 'https://sandstone-website.asanteeli256.workers.dev/',
+    img: '/projects/ChatGPT Image Sep 9, 2026, 10_27_58 PM.png',
     logo: false,
     tone: '#efe3d3',
   },
   {
     name: 'Zenas Estates',
     type: 'Real estate website',
-    url: '', // TODO: paste the link to the Zenas Estates websitenpm run dev
-    img: '/projects/WhatsApp Image 2026-05-08 at 4.30.25 PM.jpeg', // TODO: e.g. '/projects/zenas.png'
+    url: '',
+    img: '/projects/WhatsApp Image 2026-05-08 at 4.30.25 PM.jpeg',
     logo: true,
     tone: '#5b3ef0',
   },
 ];
+
 
 function initials(name) {
   return name
