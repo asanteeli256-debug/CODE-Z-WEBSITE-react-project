@@ -36,7 +36,7 @@ const PROJECTS = [
   {
     name: 'Zenas Estates',
     type: 'Real estate website',
-    url: '', // TODO: paste the link to the Zenas Estates website
+    url: '', // TODO: paste the link to the Zenas Estates websitenpm run dev
     img: '/projects/WhatsApp Image 2026-05-08 at 4.30.25 PM.jpeg', // TODO: e.g. '/projects/zenas.png'
     logo: true,
     tone: '#5b3ef0',
