@@ -28,7 +28,7 @@ const PROJECTS = [
   {
     name: 'Sandstone School of Languages',
     type: 'School website',
-    url: '', // TODO: paste the link to the Sandstone School of Languages website
+    url: 'https://sandstone-website.asanteeli256.workers.dev/', // TODO: paste the link to the Sandstone School of Languages website
     img: '/projects/ChatGPT Image Sep 9, 2026, 10_27_58 PM.png', // TODO: e.g. '/projects/sandstone.jpg'
     logo: false,
     tone: '#efe3d3',
