@@ -29,7 +29,7 @@ const PROJECTS = [
     name: 'Sandstone School of Languages',
     type: 'School website',
     url: '', // TODO: paste the link to the Sandstone School of Languages website
-    img: '', // TODO: e.g. '/projects/sandstone.jpg'
+    img: '/projects/ChatGPT Image Sep 9, 2026, 10_27_58 PM.png', // TODO: e.g. '/projects/sandstone.jpg'
     logo: false,
     tone: '#efe3d3',
   },
@@ -37,7 +37,7 @@ const PROJECTS = [
     name: 'Zenas Estates',
     type: 'Real estate website',
     url: '', // TODO: paste the link to the Zenas Estates website
-    img: '', // TODO: e.g. '/projects/zenas.png'
+    img: '/projects/WhatsApp Image 2026-05-08 at 4.30.25 PM.jpeg', // TODO: e.g. '/projects/zenas.png'
     logo: true,
     tone: '#5b3ef0',
   },

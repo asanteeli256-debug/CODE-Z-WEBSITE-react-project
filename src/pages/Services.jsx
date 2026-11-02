@@ -143,7 +143,7 @@ export default function Services() {
                   ))}
                 </ul>
                 <Link to="/#contact" className="btn-3d reveal delay-2">
-                  <span>Start a project</span>
+                  <span>Contact Us</span>
                   <ArrowUpRight className="btn-arrow" aria-hidden="true" />
                 </Link>
               </div>
